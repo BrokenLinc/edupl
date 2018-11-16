@@ -821,6 +821,14 @@
     just-debounce-it "^1.0.1"
     react-display-name "^0.2.4"
 
+"@hocs/throttle-handler@^0.5.0":
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/@hocs/throttle-handler/-/throttle-handler-0.5.0.tgz#a89c3cda564e03914a8fecbbf4585895e320df23"
+  integrity sha512-TvOyJ9PLqDeP9cedZplumiuqOS+DVQq9uPE1OL0R8nQzpsEzlE+Egg43jIE3iO+QDJ1bjczyNoCqlHKH1JpUmA==
+  dependencies:
+    just-throttle "^1.0.2"
+    react-display-name "^0.2.4"
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
@@ -5626,6 +5634,11 @@ just-debounce-it@^1.0.1:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/just-debounce-it/-/just-debounce-it-1.1.0.tgz#8e92578effc155358a44f458c52ffbee66983bef"
   integrity sha512-87Nnc0qZKgBZuhFZjYVjSraic0x7zwjhaTMrCKlj0QYKH6lh0KbFzVnfu6LHan03NO7J8ygjeBeD0epejn5Zcg==
+
+just-throttle@^1.0.2:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/just-throttle/-/just-throttle-1.1.0.tgz#178d305ece9876a8a0759abd8d403aafcc6e4849"
+  integrity sha512-iePC/13XYX1Tyn9C6jY+DG3UEejkDvrKsw5xxgGhtGUwYWmoJm4CoKexscBKELOu3FTyCDzjr21ZJ67AXnz+bg==
 
 killable@^1.0.0:
   version "1.0.1"
