@@ -1,17 +1,27 @@
 import React from 'react';
 import { compose, lifecycle, withHandlers, withProps, withState } from 'recompose';
-import debounceHandler from '@hocs/debounce-handler';
+import throttleHandler from '@hocs/throttle-handler';
+
+const withWindowEventListener = (event, handlerProp) => lifecycle({
+  componentDidMount() {
+    window.addEventListener(event, this.props[handlerProp]);
+  },
+  componentWillUnmount() {
+    window.removeEventListener(event, this.props[handlerProp]);
+  },
+});
 
 const withMenu = compose(
   withProps({
     menuRef: React.createRef(),
   }),
   withState('menuIsOpen', 'setMenuIsOpen'),
+  throttleHandler('setMenuIsOpen', 1),
   withHandlers({
-    openMenu: ({setMenuIsOpen}) => () => setMenuIsOpen(true),
     closeMenu: ({setMenuIsOpen}) => () => setMenuIsOpen(false),
+    openMenu: ({setMenuIsOpen}) => () => setMenuIsOpen(true),
+    toggleMenu: ({menuIsOpen, setMenuIsOpen}) => () => setMenuIsOpen(!menuIsOpen),
   }),
-  debounceHandler('openMenu', 1),
   withHandlers({
     handleWindowClick: ({ closeMenu, menuIsOpen, menuRef }) => ({ target }) => {
       if (menuIsOpen && !menuRef.current.contains(target)) {
@@ -19,14 +29,7 @@ const withMenu = compose(
       }
     },
   }),
-  lifecycle({
-    componentDidMount() {
-      window.addEventListener('click', this.props.handleWindowClick);
-    },
-    componentWillUnmount() {
-      window.removeEventListener('click', this.props.handleWindowClick);
-    },
-  }),
+  withWindowEventListener('click', 'handleWindowClick'),
 );
 
 export default withMenu;
