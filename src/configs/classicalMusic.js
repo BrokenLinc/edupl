@@ -1,5 +1,39 @@
 // Camille Saint-Saëns, Joshua Bell, The Carnival of the Animals, R. 125 XIII. The Swan (Joel)
 
+
+
+import purple from '@material-ui/core/colors/purple';
+import deepPurple from '@material-ui/core/colors/deepPurple';
+import indigo from '@material-ui/core/colors/indigo';
+import blue from '@material-ui/core/colors/blue';
+
+const periods = [
+  {
+    name: 'Baroque',
+    start: 1600,
+    end: 1740,
+    color: purple,
+  },
+  {
+    name: 'Classical',
+    start: 1740,
+    end: 1820,
+    color: deepPurple,
+  },
+  {
+    name: 'Romantic',
+    start: 1820,
+    end: 1920,
+    color: indigo,
+  },
+  {
+    name: 'Modern',
+    start: 1920,
+    end: new Date().getFullYear(),
+    color: blue,
+  },
+];
+
 const playlist = [
   {
     videoId: '7A7v-wK8j7g',
@@ -405,4 +439,7 @@ const playlist = [
   // },
 ];
 
-export default playlist;
+export default {
+  periods,
+  playlist,
+};

@@ -1,87 +1,15 @@
 html,
 body {
   height: 100%;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  background-color: #eee;
-  color: #555;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
-.menu {
-  position: fixed;
-  background-color: white;
-  box-shadow: 0 0 40px rgba(0,0,0,0.4);
-  top: 0;
-  bottom: 0;
-  right: 0;
-  width: 300px;
-  margin: 0;
-  padding: 0 0 10rem;
-  list-style: none;
-  transform: translateX(120%);
-  transition: transform 0.2s;
-  overflow-y: auto;
-  z-index: 1;
+.info-pane {
+  background-color: rgba(255,255,255,0.6);
 }
-.menu.is-open {
-  transform: translateX(0);
-}
-.menu li {
-  margin: 0;
-  padding: 0;
-  border-bottom: 1px solid #ddd;
-  font-size: 0.75rem;
-  line-height: 1rem;
-  font-weight: 600;
-}
-.menu a {
-  position: relative;
-  display: block;
-  padding: 0.5rem 0.5rem 0.5rem 1rem;
-  text-decoration: none;
-  color: #555;
-  transition: background-color 0.2s;
-}
-.menu a:hover {
-  background-color: #eee;
-}
-.menu li.is-active {
-  background-color: #ffffcc;
-}
-.menu li.is-active a:before {
-  position: absolute;
-  content: "";
-  display: block;
-  width: 0;
-  height: 0;
-  border: 0.5rem solid transparent;
-  border-left-color: #555;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.menu-toggle {
-  height: 2.5rem;
-  width: 2.5rem;
-  border-radius: 50%;
-  background-color: #555;
-  border: 0 none;
-  margin: 1rem;
-  color: #eee;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-.menu-toggle:hover {
-  background-color: #666;
-}
-
 .info-date {
   font-size: 0.75rem;
   line-height: 1rem;
-  font-weight: 600;
 }
 .info-pane {
   padding: 1rem;
@@ -94,7 +22,6 @@ body {
 .info-by {
   font-size: 0.75rem;
   line-height: 1rem;
-  font-weight: 600;
 }
 
 iframe {
@@ -124,35 +51,26 @@ iframe {
 .flex-column { flex-direction: column !important; }
 .flex-grow-1 { flex-grow: 1 !important; }
 .align-items-center { align-items: center !important; }
+.justify-content-end { justify-content: flex-end !important; }
 
 .time-periods {
   text-align: center;
   display: flex;
-  color: rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.6);
   line-height: 2rem;
-  font-size: 1rem;
+  font-size: 0.75rem;
   position: relative;
-}
-.time-period:nth-child(1) {
-  background-color: #456;
-}
-.time-period:nth-child(2) {
-  background-color: #564;
-}
-.time-period:nth-child(3) {
-  background-color: #645;
-}
-.time-period:nth-child(4) {
-  background-color: #546;
+  background-color: currentColor;
 }
 .time-period-marker {
   position: absolute;
   transform: translate(-50%, -50%);
   top: 50%;
-  background: white;
+  color: black;
+  background: rgba(255,255,255,0.8);
   display: block;
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 50%;
+  line-height: 1.4rem;
+  padding: 0 0.7rem;
+  border-radius: 0.7rem;
   transition: left 0.6s;
 }
